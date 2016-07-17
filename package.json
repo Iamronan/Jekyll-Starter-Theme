@@ -1,0 +1,35 @@
+{
+  "name": "static_jekyll",
+  "version": "1.0.0",
+  "description": "Gulp dependencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iamronan/Jekyll-Starter-Theme.git"
+  },
+  "keywords": [
+    "Jekyll",
+    "gulp",
+    "starter",
+    "theme"
+  ],
+  "author": "Ronan Vallelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iamronan/Jekyll-Starter-Theme/issues"
+  },
+  "homepage": "https://github.com/Iamronan/Jekyll-Starter-Theme#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-connect": "^4.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-util": "^3.0.7"
+  }
+}
