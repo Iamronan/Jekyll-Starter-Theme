@@ -11,6 +11,7 @@ const gulp = require('gulp'),
       livereload = require('gulp-livereload');
       browserSync = require('browser-sync');
       imagemin = require('gulp-imagemin');
+      htmlmin = require('gulp-htmlmin');
 
 const jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 const messages = {
@@ -78,6 +79,7 @@ gulp.task('minify-images', () =>
         .pipe(imagemin())
         .pipe(gulp.dest('./'))
 );
+
 
 // Watch files
 gulp.task('watch', () => {  
