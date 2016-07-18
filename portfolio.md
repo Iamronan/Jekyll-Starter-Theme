@@ -4,7 +4,7 @@ title: Portfolio
 permalink: /portfolio/
 ---
 
-this is 
+Portfolio title 
 
 You can find the source code for the Jekyll new theme at:
 {% include icon-github.html username="jglovier" %} /
