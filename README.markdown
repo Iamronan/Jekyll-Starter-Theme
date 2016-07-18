@@ -1,7 +1,7 @@
 ## Jekyll Starter Theme using Gulp & Blaze Modular Framework
 
 This is  starter project including full setup for Jekyll, GulpJS, Imagemin SASS, AutoPrefixer &amp; BrowserSync.
-You can add blaze components as you require for your project.git p
+You can add blaze components as you require for your project.
 
 ## System Preparation
 
