@@ -17,6 +17,19 @@ var messages = {
 };
 
 
+// Set the path variables
+const base_path = './',
+      src = base_path + '_dev/src',
+      dist = base_path + 'assets',
+      paths = {  
+          js: src + '/js/*.js',
+          scss: [ src +'/sass/*.scss', 
+                  src +'/sass/**/*.scss', 
+                  src +'/sass/**/**/*.scss'],
+          jekyll: ['index.html',  '*.md', '_posts/*', '_layouts/*', '_includes/*' , 'assets/*', 'assets/**/*']
+      };
+
+
 /**
  * Build the Jekyll Site
  */
@@ -45,19 +58,6 @@ gulp.task('browser-sync', ['compile-sass', 'jekyll-build'], function() {
 });
 
 
-// Set the path variables
-const base_path = './',
-      src = base_path + '_dev/src',
-      dist = base_path + 'assets',
-      paths = {  
-          js: src + '/js/*.js',
-          scss: [ src +'/sass/*.scss', 
-                  src +'/sass/**/*.scss', 
-                  src +'/sass/**/**/*.scss'],
-          jekyll: ['index.html',  '*.md', '_posts/*', '_layouts/*', '_includes/*' , 'assets/*', 'assets/**/*']
-      };
-
-
 // Compile sass to css
 gulp.task('compile-sass', () => {  
   return gulp.src(paths.scss)
@@ -73,23 +73,6 @@ gulp.task('compile-sass', () => {
     .pipe(livereload());
 });
 
-// Rebuild Jekyll 
-// gulp.task('build-jekyll', (code) => {
-//   return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
-//     .on('error', (error) => gutil.log(gutil.colors.red(error.message)))
-//     .on('close', code);
-// })
-
-
-
-// Setup Server
-// gulp.task('server', () => {
-//   connect.server({
-//     root: ['_site'],
-//     port: 4000,
-//     livereload: true
-//   });
-// })
 
 // Watch files
 gulp.task('watch', () => {  
