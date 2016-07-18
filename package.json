@@ -1,7 +1,7 @@
 {
   "name": "static_jekyll",
   "version": "1.0.0",
-  "description": "Gulp dependencies",
+  "description": "Gulp dependencies for Jekyll-Starter-Theme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
