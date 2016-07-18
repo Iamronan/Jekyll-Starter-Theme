@@ -10,9 +10,10 @@ const gulp = require('gulp'),
       cp = require('child_process');
       livereload = require('gulp-livereload');
       browserSync = require('browser-sync');
+      imagemin = require('gulp-imagemin');
 
-var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
-var messages = {
+const jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+const messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
@@ -29,11 +30,10 @@ const base_path = './',
           jekyll: ['index.html',  '*.md', '_posts/*', '_layouts/*', '_includes/*' , 'assets/*', 'assets/**/*']
       };
 
-
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
+gulp.task('jekyll-build', ['minify-images'], function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
         .on('close', done);
@@ -57,7 +57,6 @@ gulp.task('browser-sync', ['compile-sass', 'jekyll-build'], function() {
     });
 });
 
-
 // Compile sass to css
 gulp.task('compile-sass', () => {  
   return gulp.src(paths.scss)
@@ -73,6 +72,12 @@ gulp.task('compile-sass', () => {
     .pipe(livereload());
 });
 
+// Minify Images
+gulp.task('minify-images', () =>
+    gulp.src('src/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./'))
+);
 
 // Watch files
 gulp.task('watch', () => {  
