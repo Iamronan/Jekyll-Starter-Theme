@@ -8,7 +8,6 @@ const gulp = require('gulp'),
       prefixer = require('gulp-autoprefixer'),
       connect = require('gulp-connect');
       cp = require('child_process');
-      livereload = require('gulp-livereload');
       browserSync = require('browser-sync');
       imagemin = require('gulp-imagemin');
       htmlmin = require('gulp-htmlmin');
@@ -34,7 +33,7 @@ const base_path = './',
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', ['minify-images'], function (done) {
+gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
         .on('close', done);
@@ -60,7 +59,7 @@ gulp.task('browser-sync', ['compile-sass', 'jekyll-build'], function() {
 
 // Compile sass to css
 gulp.task('compile-sass', () => {  
-  return gulp.src(paths.scss)
+  return gulp.src('_dev/src/sass/*')
     .pipe(plumber((error) => {
         gutil.log(gutil.colors.red(error.message));
         gulp.task('compile-sass').emit('end');
@@ -70,14 +69,15 @@ gulp.task('compile-sass', () => {
     .pipe(minifyCSS())
     .pipe(rename({dirname: dist + '/css'}))
     .pipe(gulp.dest('./'))
-    .pipe(livereload());
+
 });
 
-// Minify Images
+//Minify Images
 gulp.task('minify-images', () =>
-    gulp.src('src/images/*')
+    gulp.src('_dev/src/images/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('./'))
+          .pipe(rename({dirname: dist + '/images'}))
+    .pipe(gulp.dest('./'))
 );
 
 
@@ -90,4 +90,4 @@ gulp.task('watch', () => {
 });
 
 // Start Everything with the default task
-gulp.task('default', [ 'compile-sass', 'jekyll-build', 'browser-sync', 'watch' ]);
+gulp.task('default', [ 'compile-sass', 'jekyll-build', 'browser-sync', 'watch', 'minify-images' ]);
