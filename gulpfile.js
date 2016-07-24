@@ -22,10 +22,10 @@ const messages = {
 const base_path = './',
       src = base_path + '_dev/src',
       dist = base_path + 'assets',
-      paths = {  
+      paths = {
           js: src + '/js/*.js',
-          scss: [ src +'/sass/*.scss', 
-                  src +'/sass/**/*.scss', 
+          scss: [ src +'/sass/*.scss',
+                  src +'/sass/**/*.scss',
                   src +'/sass/**/**/*.scss'],
           jekyll: ['index.html',  '*.md', '_posts/*', '_layouts/*', '_includes/*' , 'assets/*', 'assets/**/*']
       };
@@ -58,7 +58,7 @@ gulp.task('browser-sync', ['compile-sass', 'jekyll-build'], function() {
 });
 
 // Compile sass to css
-gulp.task('compile-sass', () => {  
+gulp.task('compile-sass', () => {
   return gulp.src('_dev/src/sass/*')
     .pipe(plumber((error) => {
         gutil.log(gutil.colors.red(error.message));
@@ -82,7 +82,7 @@ gulp.task('minify-images', () =>
 
 
 // Watch files
-gulp.task('watch', () => {  
+gulp.task('watch', () => {
 
   gulp.watch(paths.jekyll, ['jekyll-rebuild', 'jekyll-build']);
   gulp.watch(paths.scss, ['compile-sass']);

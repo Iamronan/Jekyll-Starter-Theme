@@ -1,7 +1,11 @@
 ## Jekyll Starter Theme using Gulp & Blaze Modular Framework
 
-This is  starter project including full setup for Jekyll, GulpJS, Imagemin SASS, AutoPrefixer &amp; BrowserSync.
+
+This is  starter project including full setup for Jekyll, GulpJS, Imagemin, SASS, AutoPrefixer &amp; BrowserSync.
 You can add blaze components as you require for your project.
+
+
+Overide partials contained within the custom folder for overides or custom theming
 
 ## System Preparation
 
@@ -15,7 +19,7 @@ To use this starter project, you'll need the following things installed on your 
 
 1. Clone this repo, or download it into a directory of your choice.
 2. Inside the directory, run `npm install`.
-3. You also need to clone [Blaze] (https://github.com/BlazeCSS/blaze)
+3. You also need to clone [Blaze] (https://github.com/BlazeCSS/blaze) into yoursass directory
 
 ## Usage
 
