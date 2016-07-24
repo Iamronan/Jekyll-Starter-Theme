@@ -1,29 +1,47 @@
 ---
 layout: default
 ---
-
 <div class="home">
-
     <h1 class="page-heading">Posts</h1>
-
     <ul class="post-list">
-    {% for post in site.posts %}
-     <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-     </li>
-    {% endfor %}
+        {% for post in site.posts %}
+            <li>
+                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                </h2>
+            </li>
+        {% endfor %}
     </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 </div>
 
-<div class="o-grid">
-  <div class="o-grid__cell o-grid__cell--width-50">first</div>
-  <div class="o-grid__cell">second</div>
-  <div class="o-grid__cell">third</div>
+<!-- Typography example example -->
+
+<h2 class="c-heading c-heading--xlarge">This is a heading</h2>
+<p class="c-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque cupiditate doloremque laudantium fuga recusandae nobis explicabo consequuntur commodi ad rerum aliquam quia, cum, fugit eos et dolorem deleniti blanditiis fugiat.</p>
+
+
+<h2 class="c-heading c-heading--large">Buttons</h2>
+
+<div class="o-grid o-grid--small-full o-grid--medium-full o-grid--large-full">
+    <div class="o-grid__cell">
+
+        <button class="c-button">Button</button>
+        <button class="c-button c-button--primary">Button</button>
+        <button class="c-button c-button--success">Button</button>
+        <button class="c-button c-button--error">Button</button>
+
+    </div>
 </div>
+
+
+<h2 class="c-heading c-heading--large">This is a grid</h2>
+<div class="o-grid o-grid--small-full o-grid--medium-full o-grid--large-full">
+    <div class="o-grid__cell ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque cupiditate doloremque laudantium fuga recusandae nobis explicabo consequuntur commodi ad rerum aliquam quia, cum, fugit eos et dolorem deleniti blanditiis fugiat.t</div>
+    <div class="o-grid__cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque cupiditate doloremque laudantium fuga recusandae nobis explicabo consequuntur commodi ad rerum aliquam quia, cum, fugit eos et dolorem deleniti blanditiis fugiat.</div>
+    <div class="o-grid__cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque cupiditate doloremque laudantium fuga recusandae nobis explicabo consequuntur commodi ad rerum aliquam quia, cum, fugit eos et dolorem deleniti blanditiis fugiat.</div>
+</div>
+
+
+
+<!-- grid -->

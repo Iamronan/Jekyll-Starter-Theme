@@ -1,6 +1,7 @@
 //global import stylesheet
 
 //import blaze components
+@import "custom/settings";
 @import "blaze/blaze";
 @import "blaze/blaze.animations";
 
@@ -9,6 +10,7 @@
 //@import "vendor";
 
 //import custom styles/
+@import "custom/mixins";
 @import "custom/variables";
 @import "custom/layout";
 @import "custom/base";
