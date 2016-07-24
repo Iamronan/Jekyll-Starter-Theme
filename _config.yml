@@ -8,7 +8,7 @@
 # Site settings
 title: Iamronan Portfolio
 email: ronan@iamronan.com
-description:  Write an awesome description for your new site here. You can edit this
+description:  Jekyl template starter theme using gulp
 
 
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -25,6 +25,3 @@ exclude: ["_dev",
             "node_modules",
             "README.markdown",
             "package.json"]
-
-
-include: ["img"]

@@ -1,6 +1,14 @@
+//global import stylesheet
 
-@import "partials/variables";
-@import "partials/base";
-@import "partials/layout";
+//import blaze components
 @import "blaze/blaze";
 @import "blaze/blaze.animations";
+
+
+//import  vendor specific css libaries eg hover.css
+//@import "vendor";
+
+//import custom styles/
+@import "partials/variables";
+@import "partials/layout";
+@import "partials/base";
