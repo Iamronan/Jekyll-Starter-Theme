@@ -1,7 +1,57 @@
 ---
 layout: default
 ---
-<div class="home">
+
+
+<!-- hero section  -->
+<div class="header header--primary">
+    <div class="o-container o-container--small">
+        <div class="o-grid">
+            <h1 class="o-grid__cell o-grid__cell--offset-25 o-grid__cell--width-50">
+            <img class="o-image" src="{{ "/assets/images/blaze.png" | prepend: site.url  }}">
+                <link rel="stylesheet" href="{{ "/assets/css/style.css" | prepend: site.url  }}">
+            </h1>
+        </div>
+
+        <div class="product-name">Blaze<span style="color:#FF3D00;font-weight:normal;">_CSS</span></div>
+
+        <div class="header__row u-pillar-box--medium">
+            Open source modular CSS framework providing great structure for building websites quickly
+        </div>
+
+        <div class="header__row o-grid o-grid--small-full o-grid--medium-fit">
+            <div class="o-grid__cell u-letter-box--small">
+                <a class="c-button c-button--primary c-button--block hero-button" href="/getting-started/install">Get Started</a>
+            </div>
+            <div class="o-grid__cell u-letter-box--small">
+                <a class="c-button c-button--ghost-secondary c-button--block hero-button" href="/components/alerts">Components</a>
+            </div>
+        </div>
+
+        <div class="header__row">
+            <small>
+                <span class="c-badge c-badge--success u-pillar-box--medium">v2.10.0</span>
+                <a class="c-link u-pillar-box--medium" href="/templates">
+                    <i class="fa fa-file-code-o"></i> Examples
+                </a>
+                <a class="c-link" href="/community/forum">
+                    <i class="fa fa-comments"></i> Forum
+                </a>
+                <a class="c-link u-pillar-box--medium" href="https://cdn.jsdelivr.net/blazecss/latest/blaze.min.css" download="">
+                    <i class="fa fa-download"></i> Download
+                </a>
+                <a class="c-link" href="https://github.com/BlazeCSS/blaze">
+                    <i class="fa fa-github-alt"></i> GitHub
+                </a>
+            </small>
+        </div>
+    </div>
+</div>
+
+
+<h2 class="c-heading c-heading--large">Posts</h2>
+
+
     <h1 class="page-heading">Posts</h1>
     <ul class="post-list">
         {% for post in site.posts %}
@@ -13,7 +63,7 @@ layout: default
             </li>
         {% endfor %}
     </ul>
-</div>
+
 
 <!-- Typography example example -->
 

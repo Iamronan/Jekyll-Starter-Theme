@@ -112,3 +112,69 @@ Stylesheet: Custom layout
 
     }
 }
+
+
+/*
+ * Page Header
+ */
+
+.header {
+    text-align: center;
+    padding-bottom: 2em;
+    color: #fff;
+    background-color: $grey-color-light;
+}
+
+.header .header__row {
+    padding-top: 1.4em;
+    padding-bottom: 1.4em;
+}
+
+.header--primary {
+    padding-top: 2em;
+    color: #2c3e50;
+}
+
+.header--secondary {
+    font-size: 0.9em;
+    padding: 2em 0 4em;
+    background-color: #42A5F5;
+}
+
+.header--secondary .grid__cell {
+    padding: 1em;
+}
+
+.header--inverted {
+    background-color: #222;
+}
+
+.header--white {
+    color: inherit;
+    background-color: #fff;
+}
+
+.logo .o-image {
+    display: inline-block;
+    width: 200px;
+}
+
+.product-name {
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+@media (min-width: 42em) {
+    .product-name {
+        font-size: 5em;
+    }
+}
+
+.product-name span {
+    font-weight: normal;
+}
+
+.hero-button {
+    letter-spacing: 4px;
+}
+
