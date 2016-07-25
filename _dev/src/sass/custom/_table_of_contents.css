@@ -1,0 +1,42 @@
+/******************************************************************
+
+Oultines content for each of the scss files - Example
+
+******************************************************************/
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * settings.scss........Globally-available variables and config for foundation 6
+ including base styles.
+ *
+ * STYLE
+ * style.scss...........Imports all required SASS related files for compiling
+ * main.scss............Main style sheet for wordpress classes/ overall styling
+ *
+ * Layout
+ * layout.scss..........Custom semantic layout classes including wrappers
+ *
+ * TOOLS
+ * mixins.scss..........Useful mixins.
+ *
+ * Components
+ * blocks.scss..........reusable block layout components.
+ * buttons.scss.........reuseable button components.
+ * lists.scss...........reuseable list/menu components.
+ *
+ *
+ * General
+ * print.scss...........Print stylesheet
+ * login.scss...........Wordpress Login page styles
+ * 2x.scss..............retina images
+ *
+ * Utilities
+ * helper-classes.scss. Helper classes
+ *
+ * Plugins
+ * slick.scss...........Slick jquery slider scss files
+ * slick-theme.scss
+ */
+
