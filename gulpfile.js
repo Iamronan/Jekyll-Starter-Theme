@@ -11,6 +11,9 @@ const gulp = require('gulp'),
       browserSync = require('browser-sync');
       imagemin = require('gulp-imagemin');
       htmlmin = require('gulp-htmlmin');
+      uglify = require('gulp-uglify');
+      pump = require('pump');
+
 
 const jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 const messages = {
@@ -72,6 +75,19 @@ gulp.task('compile-sass', () => {
 
 });
 
+
+
+// Compile site js and minify
+gulp.task('site-js', function (cb) {
+  pump([
+        gulp.src('_dev/src/js/*/*.js')
+        .pipe(uglify()),
+        gulp.dest('assets/js')
+    ],
+    cb
+  );
+});
+
 //Minify Images
 gulp.task('minify-images', () =>
     gulp.src('_dev/src/images/*')
@@ -86,8 +102,9 @@ gulp.task('watch', () => {
 
   gulp.watch(paths.jekyll, ['jekyll-rebuild', 'jekyll-build']);
   gulp.watch(paths.scss, ['compile-sass']);
+  gulp.watch(paths.js, ['site-js']);
 
 });
 
 // Start Everything with the default task
-gulp.task('default', [ 'compile-sass', 'jekyll-build', 'browser-sync', 'watch', 'minify-images' ]);
+gulp.task('default', [ 'compile-sass', 'jekyll-build', 'browser-sync', 'site-js', 'watch', 'minify-images' ]);
