@@ -74,6 +74,7 @@ gulp.task('compile-sass', () => {
     .pipe(minifyCSS())
     .pipe(rename({dirname: dist + '/css'}))
     .pipe(gulp.dest('./'))
+    .pipe(notify("sass compile complete!"))
 
 
 });
@@ -87,6 +88,7 @@ gulp.task('site-js', function () {
         .pipe(uglify())
         .pipe(rename({dirname: dist + '/js'}))
         .pipe(gulp.dest('./'))
+        .pipe(notify("js concat complete!"))
 
 });
 
@@ -96,6 +98,7 @@ gulp.task('site-js', function () {
     .pipe(imagemin())
     .pipe(rename({dirname: dist + '/images'}))
     .pipe(gulp.dest('./'))
+    .pipe(notify("Images minified!"))
 );
 
 
