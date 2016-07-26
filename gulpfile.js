@@ -76,7 +76,6 @@ gulp.task('compile-sass', () => {
     .pipe(gulp.dest('./'))
     .pipe(notify("sass compile complete!"))
 
-
 });
 
 
