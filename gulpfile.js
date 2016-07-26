@@ -12,6 +12,8 @@ const gulp = require('gulp'),
       imagemin = require('gulp-imagemin');
       htmlmin = require('gulp-htmlmin');
       uglify = require('gulp-uglify');
+      notify = require("gulp-notify");
+      concat = require('gulp-concat');
       pump = require('pump');
 
 
@@ -73,26 +75,26 @@ gulp.task('compile-sass', () => {
     .pipe(rename({dirname: dist + '/css'}))
     .pipe(gulp.dest('./'))
 
+
 });
 
 
+// Concat site & vendor specific js files and minify
+gulp.task('site-js', function () {
 
-// Compile site js and minify
-gulp.task('site-js', function (cb) {
-  pump([
-        gulp.src('_dev/src/js/*/*.js')
-        .pipe(uglify()),
-        gulp.dest('assets/js')
-    ],
-    cb
-  );
+        gulp.src('_dev/src/js/**/*.js')
+        .pipe(concat('site-min.js'))
+        .pipe(uglify())
+        .pipe(rename({dirname: dist + '/js'}))
+        .pipe(gulp.dest('./'))
+
 });
 
 //Minify Images
-gulp.task('minify-images', () =>
+    gulp.task('minify-images', () =>
     gulp.src('_dev/src/images/*')
-        .pipe(imagemin())
-          .pipe(rename({dirname: dist + '/images'}))
+    .pipe(imagemin())
+    .pipe(rename({dirname: dist + '/images'}))
     .pipe(gulp.dest('./'))
 );
 
