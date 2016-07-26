@@ -15,6 +15,7 @@ const gulp = require('gulp'),
       notify = require("gulp-notify");
       concat = require('gulp-concat');
       pump = require('pump');
+      sourcemaps = require('gulp-sourcemaps');
 
 
 const jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
@@ -64,15 +65,22 @@ gulp.task('browser-sync', ['compile-sass', 'jekyll-build'], function() {
 
 // Compile sass to css
 gulp.task('compile-sass', () => {
-  return gulp.src('_dev/src/sass/*')
+  return gulp.src([
+
+        '_dev/src/sass/*',
+        '_dev/src/sass/blaze/scss/blaze.scss'
+    ])
+
     .pipe(plumber((error) => {
         gutil.log(gutil.colors.red(error.message));
         gulp.task('compile-sass').emit('end');
     }))
+    .pipe(sourcemaps.init()) // Start Sourcemaps
     .pipe(sass())
     .pipe(prefixer('last 3 versions', 'ie 9'))
     .pipe(minifyCSS())
     .pipe(rename({dirname: dist + '/css'}))
+    .pipe(sourcemaps.write('.')) // Creates sourcemaps for minified styles
     .pipe(gulp.dest('./'))
     .pipe(notify("sass compile complete!"))
 
@@ -82,7 +90,13 @@ gulp.task('compile-sass', () => {
 // Concat site & vendor specific js files and minify
 gulp.task('site-js', function () {
 
-        gulp.src('_dev/src/js/**/*.js')
+        gulp.src([
+
+            '_dev/src/js/**/*.js',
+            '_dev/src/js/vendor/jquery/dist/jquery.js'
+        ])
+
+        .pipe(plumber())
         .pipe(concat('site-min.js'))
         .pipe(uglify())
         .pipe(rename({dirname: dist + '/js'}))
