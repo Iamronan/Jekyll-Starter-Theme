@@ -4,18 +4,31 @@ const gulp = require('gulp'),
       gutil = require('gulp-util'),
       plumber = require('gulp-plumber'),
       rename = require('gulp-rename'),
+
+      //css
       minifyCSS = require('gulp-minify-css'),
       prefixer = require('gulp-autoprefixer'),
+      sourcemaps = require('gulp-sourcemaps'),
+
+      //css
+      browserSync = require('browser-sync'),
+
+      // Minify html & images
+      imagemin = require('gulp-imagemin'),
+      htmlmin = require('gulp-htmlmin'),
+
+
+      //js
+      uglify = require('gulp-uglify'),
+      concat = require('gulp-concat'),
+
+      //errors
+      pump = require('pump'),
+      notify = require("gulp-notify"),
+
+      // help run jekyllbuild
+      cp = require('child_process'),
       connect = require('gulp-connect');
-      cp = require('child_process');
-      browserSync = require('browser-sync');
-      imagemin = require('gulp-imagemin');
-      htmlmin = require('gulp-htmlmin');
-      uglify = require('gulp-uglify');
-      notify = require("gulp-notify");
-      concat = require('gulp-concat');
-      pump = require('pump');
-      sourcemaps = require('gulp-sourcemaps');
 
 
 const jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
@@ -36,14 +49,6 @@ const base_path = './',
           jekyll: ['index.html',  '*.md', '_posts/*', '_layouts/*', '_includes/*' , 'assets/*', 'assets/**/*']
       };
 
-/**
- * Build the Jekyll Site
- */
-gulp.task('jekyll-build', function (done) {
-    browserSync.notify(messages.jekyllBuild);
-    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
-        .on('close', done);
-});
 
 /**
  * Rebuild Jekyll & do page reload
@@ -113,6 +118,18 @@ gulp.task('site-js', function () {
     .pipe(gulp.dest('./'))
     .pipe(notify("Images minified!"))
 );
+
+
+
+/**
+ * Build the Jekyll Site
+ */
+gulp.task('jekyll-build', function (done) {
+    browserSync.notify(messages.jekyllBuild);
+    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
 
 
 // Watch files
