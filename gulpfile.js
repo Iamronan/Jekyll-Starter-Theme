@@ -46,7 +46,8 @@ const base_path = './',
           scss: [ src +'/sass/*.scss',
                   src +'/sass/**/*.scss',
                   src +'/sass/**/**/*.scss'],
-          jekyll: ['index.html',  '*.md', '_posts/*', '_layouts/*', '_includes/*' , 'assets/*', 'assets/**/*']
+          jekyll: ['index.html',  '*.md', '_posts/*', '_layouts/*', '_includes/*' , 'assets/*', 'assets/**/*'],
+          images: ['_dev/src/images/*png', '_dev/src/images/*svg']
       };
 
 
@@ -138,6 +139,7 @@ gulp.task('watch', () => {
   gulp.watch(paths.jekyll, ['jekyll-rebuild', 'jekyll-build']);
   gulp.watch(paths.scss, ['compile-sass']);
   gulp.watch(paths.js, ['site-js']);
+    gulp.watch(paths.images, ['minify-images', 'jekyll-rebuild', 'jekyll-build']);
 
 });
 
