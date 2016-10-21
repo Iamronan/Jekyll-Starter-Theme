@@ -1,6 +1,6 @@
 //global import stylesheet
 
-//import blaze components
+//import blaze components are required
 @import "custom/settings";
 @import "blaze/scss/blaze";
 @import "blaze/scss/blaze.animations";
@@ -10,7 +10,15 @@
 //@import "vendor";
 
 //import custom styles/
-@import "custom/mixins";
-@import "custom/variables";
-@import "custom/layout";
-@import "custom/base";
+@import "custom/_animations";
+@import "custom/_component.header";
+@import "custom/_component.footer";
+@import "custom/_component.post";
+@import "custom/_component.buttons";
+@import "custom/_component.nav";
+@import "custom/_generic.global";
+@import "custom/_generic.layout";
+@import "custom/_settings.global";
+@import "custom/_tools.mixins";
+@import "custom/_trumps.display";
+@import "custom/_utilities.nav";
