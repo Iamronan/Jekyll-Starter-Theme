@@ -1,4 +1,15 @@
-//global import stylesheet
+/*
+# CONTENTS
+#
+# 1. Settings - Variables / Settings for Colors, Font's, Base Styles etc.
+# 2. Tools - Globally used mixins and functions
+# 3. Generic - Reset / Normalize Styles. 1st layer that actually generates styles.
+# 4. Elements - Styling for base html elements. No classes or id's in here.
+# 5. Objects - Class based selectors which define undecorated design patterns
+# 6. Components - Specific UI components.
+# 7. Trumps - Utilities & Helper Classes.
+*/
+
 
 //import blaze components are required
 @import "custom/settings";

@@ -1,0 +1,99 @@
+/************************************************
+
+Stylesheet: Utilities
+
+
+*************************************************/
+
+
+$base-space-unit: 1em;
+
+// Top margin
+.margin-top-none    { margin-top: 0; }
+.margin-top-quarter { margin-top: $base-space-unit / 4; }
+.margin-top-half    { margin-top: $base-space-unit / 2; }
+.margin-top-one     { margin-top: $base-space-unit; }
+.margin-top-two     { margin-top: $base-space-unit * 2; }
+
+// Top padding
+.padding-top-none    { padding-top: 0; }
+.padding-top-quarter { padding-top: $base-space-unit / 4; }
+.padding-top-half    { padding-top: $base-space-unit / 2; }
+.padding-top-one     { padding-top: $base-space-unit; }
+.padding-top-two     { padding-top: $base-space-unit * 2; }
+
+
+// Bottom padding
+.padding-top-none       { padding-top: 0; }
+.padding-bottom-quarter { padding-bottom: $base-space-unit / 4; }
+.padding-bottom-half    { padding-bottom: $base-space-unit / 2; }
+.padding-bottom-one     { padding-bottom: $base-space-unit; }
+.padding-bottom-two     { padding-bottom: $base-space-unit * 2; }
+
+
+// no padding
+
+.u-pl0 {padding-left:0;}
+.u-pr0 {padding-right:0;}
+.u-pt0 {padding-top:0;}
+.u-pb0 {padding-bottom:0;}
+
+
+// Top padding
+.u-pt-quarter       {  padding-top: $base-space-unit / 4; }
+.u-pt-half          {  padding-top: $base-space-unit / 2; }
+.u-pt-one           {  padding-top: $base-space-unit; }
+.u-pt-two           {  padding-top: $base-space-unit * 2;}
+
+
+
+// Right padding
+.u-pr-quarter       {  padding-right: $base-space-unit / 4; }
+.u-pr-half          {  padding-right: $base-space-unit / 2; }
+.u-pr-one           {  padding-right: $base-space-unit; }
+.u-pr-two           {  padding-right: $base-space-unit * 2;}
+
+
+// Left padding
+.u-pl-quarter       {  padding-left: $base-space-unit / 4; }
+.u-pl-half          {  padding-left: $base-space-unit / 2; }
+.u-pl-one           {  padding-left: $base-space-unit; }
+.u-pl-two           {  padding-left: $base-space-unit * 2;}
+
+
+// Bottom padding
+.u-pb-quarter       {  padding-bottom: $base-space-unit / 4; }
+.u-pb-half          {  padding-bottom: $base-space-unit / 2; }
+.u-pb-one           {  padding-bottom: $base-space-unit; }
+.u-pb-two           {  padding-bottom: $base-space-unit * 2;}
+
+// center image
+
+.u-c-image {
+display:block;
+margin: auto;
+}
+
+
+
+.mobile-hide {
+
+    @include screen--xsmall-and-up {
+        display:none;
+    }
+    @include screen--medium-and-up {
+        display: block;
+    }
+
+}
+
+.mobile-show {
+
+    @include screen--xsmall-and-up {
+        display:block;
+    }
+    @include screen--medium-and-up {
+        display: none;
+    }
+
+}
